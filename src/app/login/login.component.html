@@ -1,0 +1,18 @@
+<div class="container col-md-3" *ngIf = "mostrar">
+    <br/>
+        <form class="col-9">
+    
+            <div class="md-3">
+                <input type="text" name="nombre" placeholder="usuario" class="form-control"> 
+            </div>
+    
+            <div class="md-3">
+                <input type="password" name="contrasena" placeholder="contraseña" class="form-control">
+            </div>
+    
+            <div>
+                <button type="submit" class="btn btn-primary" routerLink="/navbar" (click)="toogle()">Ingresar</button>
+            </div>
+    
+        </form>
+    </div>
