@@ -5,18 +5,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_ROUTING } from './app.routes';
-import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ListarCitasComponent } from './listar-citas/listar-citas.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListarCitasComponent } from './components/listas/listar-citas/listar-citas.component';
+import { AgregarCitaComponent } from './components/agregar-cita/agregar-cita.component';
+import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
+import { CitasPorAgregarComponent } from './components/citas-por-agregar/citas-por-agregar.component';
+import { ListarUsuariosComponent } from './components/listas/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MenuComponent,
     NavbarComponent,
-    ListarCitasComponent
+    ListarCitasComponent,
+    AgregarCitaComponent,
+    AgregarClienteComponent,
+    CitasPorAgregarComponent,
+    ListarUsuariosComponent
   ],
   imports: [
     BrowserModule,
