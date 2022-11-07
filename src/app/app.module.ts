@@ -8,10 +8,11 @@ import { APP_ROUTING } from './app.routes';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListarCitasComponent } from './components/listas/listar-citas/listar-citas.component';
-import { AgregarCitaComponent } from './components/agregar-cita/agregar-cita.component';
-import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
-import { CitasPorAgregarComponent } from './components/citas-por-agregar/citas-por-agregar.component';
-import { ListarUsuariosComponent } from './components/listas/listar-usuarios/listar-usuarios.component';
+import { AgregarCitaComponent } from './components/agregar/agregar-cita/agregar-cita.component';
+import { AgregarClienteComponent } from './components/agregar/agregar-cliente/agregar-cliente.component';
+import { CitasPorAgregarComponent } from './components/listas/citas-por-agregar/citas-por-agregar.component';
+import { ListarClientesComponent } from './components/listas/listar-clientes/listar-clientes.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ListarUsuariosComponent } from './components/listas/listar-usuarios/lis
     AgregarCitaComponent,
     AgregarClienteComponent,
     CitasPorAgregarComponent,
-    ListarUsuariosComponent
+    ListarClientesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,28 +1,14 @@
-.divContainer{
-    padding-top: 5%;
-    padding-top: 5%;
-    width: 60%;
-    margin: 0 auto;
+.divPendientes{
+    width: 20%;
+    margin-top: 12%;
+    margin-left: 7%;
 }
 
-.h2Ti{
-    margin-top: 2em;
-    text-align:center;
-}
-.ibotton{
-    padding-left: 20%;
+.divColumnaDoble{
+    float: left;
 }
 
-.buttonAnadir {
-    background-color: #000000;
-    -webkit-transition-duration: 0.1s;
-    transition-duration: 0.1s;
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    float: right;
+.registrosListados{
+    margin-left: 10%;
 }
 
-.buttonAnadir:hover {
-    background-color: #4b4b4b;
-    color: white;
-}

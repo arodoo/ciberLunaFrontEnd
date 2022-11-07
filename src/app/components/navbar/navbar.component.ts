@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   titulo='Ciber Luna';
 
   ngOnInit(): void {
+    
   }
 
 }

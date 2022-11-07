@@ -1,9 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AgregarCitaComponent } from './components/agregar-cita/agregar-cita.component';
-import { CitasPorAgregarComponent } from './components/citas-por-agregar/citas-por-agregar.component';
+import { AgregarCitaComponent } from './components/agregar/agregar-cita/agregar-cita.component';
+import { AgregarClienteComponent } from './components/agregar/agregar-cliente/agregar-cliente.component';
+import { CitasPorAgregarComponent } from './components/listas/citas-por-agregar/citas-por-agregar.component';
 import { ListarCitasComponent } from './components/listas/listar-citas/listar-citas.component';
-import { ListarUsuariosComponent } from './components/listas/listar-usuarios/listar-usuarios.component';
+import { ListarClientesComponent } from './components/listas/listar-clientes/listar-clientes.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -11,8 +12,9 @@ const APP_ROUTES : Routes = [
     {path : 'navbar', component : NavbarComponent},
     {path : 'login', component : LoginComponent},
     {path : 'listar-citas', component : ListarCitasComponent},
-    {path : 'listar-clientes', component : ListarUsuariosComponent},
+    {path : 'listar-clientes', component : ListarClientesComponent},
     {path : 'agregar-cita', component : AgregarCitaComponent},
+    {path : 'agregar-cliennte', component : AgregarClienteComponent},
     {path : 'citas-por-aprobar', component : CitasPorAgregarComponent},
     {path : '***', pathMatch : 'full', redirectTo: ''}
 ]
