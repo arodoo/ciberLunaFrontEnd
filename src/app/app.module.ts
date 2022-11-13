@@ -12,6 +12,7 @@ import { AgregarCitaComponent } from './components/agregar/agregar-cita/agregar-
 import { AgregarClienteComponent } from './components/agregar/agregar-cliente/agregar-cliente.component';
 import { CitasPorAgregarComponent } from './components/listas/citas-por-agregar/citas-por-agregar.component';
 import { ListarClientesComponent } from './components/listas/listar-clientes/listar-clientes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ListarClientesComponent } from './components/listas/listar-clientes/lis
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     APP_ROUTING,
   ],
   providers: [],

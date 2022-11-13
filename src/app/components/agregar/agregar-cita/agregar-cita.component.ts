@@ -12,4 +12,7 @@ export class AgregarCitaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /*var myDate = new Date(dateString);
+  var output = myDate.getDate() + "\\" +  (myDate.getMonth()+1) + "\\" + myDate.getFullYear(); */
+
 }

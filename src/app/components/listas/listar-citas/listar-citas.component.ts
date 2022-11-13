@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarCitasComponent implements OnInit {
 
-  titulo = 'Registros';
+  titulo = 'Equipos';
   constructor() { }
 
   ngOnInit(): void {
