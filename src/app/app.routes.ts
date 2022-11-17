@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 const APP_ROUTES : Routes = [
+    {path : '', redirectTo:'login', pathMatch:'full'},
     {path : 'navbar', component : NavbarComponent},
     {path : 'login', component : LoginComponent},
     {path : 'listar-citas', component : ListarCitasComponent},
