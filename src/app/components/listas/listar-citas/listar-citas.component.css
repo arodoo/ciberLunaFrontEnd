@@ -1,14 +1,43 @@
 .divPendientes{
+    float: right;
     width: 20%;
     margin-top: 12%;
-    margin-left: 7%;
+    margin-right: 5%;
 }
 
-.divColumnaDoble{
+.divContainer{
+    padding-top: 8%;
+    width: 70%;
+    margin: 0 auto;
     float: left;
+    padding-left: 10%;
 }
 
-.registrosListados{
-    margin-left: 10%;
+
+
+.h2Ti{
+    margin-top: 2em;
+    text-align:center;
+}
+.ibotton{
+    padding-left: 20%;
+}
+
+.buttonAnadir {
+    background-color: #000000;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    float: right;
+}
+
+.buttonAnadir:hover {
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.navPrin{
+    height: 7em;
 }
 

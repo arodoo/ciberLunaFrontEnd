@@ -1,58 +1,52 @@
-<div class="container divContainer divColumnaDoble registrosListados">
-  <h2 class="h2Ti">{{ titulo }}</h2>
-  <table class="table table-bordered">
-
-    <thead>
-      <tr>
-        <!--<th scope="col">#</th>-->
-        <th scope="col">Cliente</th>
-        <th scope="col">Equipo</th>
-        <th scope="col">Marca</th>
-        <th scope="col">Modelo</th>
-        <th scope="col">Problema</th>
-        <th scope="col">Entregado</th>
-        <th scope="col">Pagado</th>
-      </tr>
-    </thead>
-
-    <tbody class="table-group-divider">
-      <!--<tr *ngFor="let cit of cita">-->
+<div>
+  <app-navbar></app-navbar>
+  <div class="container divContainer">
+    <h2 class="h2Ti">{{ titulo }}</h2>
+    <table class="table table-bordered">
+      <thead>
         <tr>
-        <td>Cliente 1</td>
-        <td>Equipo 1</td>
-        <td>Marca 1</td>
-        <td>Modelo 1</td>
-        <td>Problema 1</td>
-        <td>Entregado 1</td>
-        <td>Pagado 1</td>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">fecha recibido</th>
+          <th scope="col">Entregado</th>
+          <th scope="col">Reparado</th>
+        </tr>
+      </thead>
+
+      <tbody class="table-group-divider">
+        <tr *ngFor="let e of equipos">
+          <td> {{ e.marca }} </td>
+          <td> {{ e.modelo }} </td>
+          <td> {{ e.fecha_recibido }} </td>
+          <td> {{ e.entregado }} </td>
+          <td> {{ e.estado_reparacion }} </td>
+          <td>
+            <i class="fa-solid fa-pen-to-square" [routerLink]="['/agregar-cita',e.id_equipo]"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn buttonAnadir" routerLink="/agregar-cita">Añadir</button>
+  </div>
+
+  <div class="container table divPendientes">
+    <table>
+      <tr>
         <td>
-          <i class="fa-solid fa-square-info">I</i>
+          <p class="pPendientes">Entregas pendientes:</p>
+        </td>
+        <td>
+          <p>5</p>
         </td>
       </tr>
-    </tbody>
-  </table>
-  <button class="btn buttonAnadir" routerLink="/edit-cita">Añadir</button>
-</div>
-
-<div class="container table divPendientes divColumnaDoble">
-  <table>
-    <tr>
-      <td>
-        <p class="pPendientes">Entregas pendientes:</p>
-      </td>
-      <td>
-        <p>5</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p class="pPendientes">Pagos pendientes:</p>
-      </td>
-      <td>
-        <p>
-          3
-        </p>
-      </td>
-    </tr>
-  </table>
+      <tr>
+        <td>
+          <p class="pPendientes">Pagos pendientes:</p>
+        </td>
+        <td>
+          <p>3</p>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

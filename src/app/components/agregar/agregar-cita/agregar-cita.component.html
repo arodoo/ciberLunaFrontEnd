@@ -1,9 +1,68 @@
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title text-center">Añadir cita</h5>
-
-        <div class="form-group">
-            
-        </div>
-    </div>
+<div class="divContainer">
+    <app-navbar></app-navbar>
+<div class="container card paddc ">
+    <label class="form-label marTitle"> {{titulo}} </label>
+  
+    <form class="row g-3" [formGroup] = "equipoForm" (ngSubmit)="save()">
+      <div class="col-md-4 divIn">
+        <label class="form-label sub" for="marca">Marca</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Marca"
+          name="fecha"
+          required
+          formControlName="marca"
+        />
+      </div>
+      <div class="col-md-4 divIn">
+        <label class="form-label sub" for="modelo">Modelo</label>
+        <input
+          type="text"
+          class="form-control"
+          name="modelo"
+          required
+          formControlName="modelo"
+        />
+      </div>
+      <div class="col-md-4 divIn">
+        <label class="form-label sub" for="fecha_recibido">Fecha recibido</label>
+        <input
+          type="text"
+          class="form-control"
+          name="fecha_recibido"
+          formControlName="fecha_recibido"
+        />
+      </div>
+      <div class="col-md-4 divIn">
+        <label class="form-label sub" for="entregado">Entregado</label>
+        <input
+          type="radio"
+          class="form-control"
+          name="entregado"
+          formControlName="entregado"
+        />
+      </div>
+      <div class="col-md-4 divIn100">
+        <label class="form-label sub" for="motivo">Reparado</label>
+        <input
+          type="radio"
+          class="form-control"
+          name="motivo"
+          formControlName="motivo"
+        />
+      </div>
+  
+      <div class="col-12">
+        <button
+          type="submit"
+          class="btn btn-primary sub buttonAnadir"
+  
+          
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

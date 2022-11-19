@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipoService } from 'src/app/services/equipo.service';
 
 @Component({
   selector: 'app-listar-citas',
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class ListarCitasComponent implements OnInit {
 
   titulo = 'Equipos';
-  constructor() { }
+  equipos: any;
+  constructor(private equipoService: EquipoService) { }
 
   ngOnInit(): void {
+    this.equipoService.getAllEquipos().subscribe(response =>{
+      this.equipos = response;
+    },
+    error =>{
+      console.log(error)
+    });
   }
 
 }

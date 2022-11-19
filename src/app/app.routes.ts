@@ -5,8 +5,8 @@ import { AgregarClienteComponent } from './components/agregar/agregar-cliente/ag
 import { CitasPorAgregarComponent } from './components/listas/citas-por-agregar/citas-por-agregar.component';
 import { ListarCitasComponent } from './components/listas/listar-citas/listar-citas.component';
 import { ListarClientesComponent } from './components/listas/listar-clientes/listar-clientes.component';
-import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/vistas/login/login.component';
+import { NavbarComponent } from './components/vistas/navbar/navbar.component';
 
 const APP_ROUTES : Routes = [
     {path : '', redirectTo:'login', pathMatch:'full'},
