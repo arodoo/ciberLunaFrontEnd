@@ -1,13 +1,13 @@
 <div class="divContainer">
-    <app-navbar></app-navbar>
-<div class="container card paddc ">
-    <label class="form-label marTitle"> {{titulo}} </label>
-  
-    <form class="row g-3" [formGroup] = "equipoForm" (ngSubmit)="save()">
+  <app-navbar></app-navbar>
+  <div class="container card">
+    <label class="form-label"> {{ titulo }} </label>
+    <form class="row g-3" [formGroup]="equipoForm" (ngSubmit)="save()">
       <div class="col-md-4 divIn">
         <label class="form-label sub" for="marca">Marca</label>
         <input
           type="text"
+          autocomplete="off"
           class="form-control"
           placeholder="Marca"
           name="fecha"
@@ -19,49 +19,87 @@
         <label class="form-label sub" for="modelo">Modelo</label>
         <input
           type="text"
+          autocomplete="off"
           class="form-control"
+          placeholder="Modelo"
           name="modelo"
           required
           formControlName="modelo"
         />
       </div>
       <div class="col-md-4 divIn">
-        <label class="form-label sub" for="fecha_recibido">Fecha recibido</label>
+        <label class="form-label sub" for="modelo">Fecha recibido</label>
+        <br />
         <input
-          type="text"
+          [readonly]="isClicked"
+          type="date"
           class="form-control"
           name="fecha_recibido"
           formControlName="fecha_recibido"
         />
+        <input type="checkbox" (click)="bloquear()" />
+        <label class="form-label sub" for="fecha_recibido">Hoy</label>
       </div>
+
+      <div class="col-md-4">
+        <label class="form-label sub" for="modelo">Cliente</label>
+        <select class="form-control" formControlName="cliente">
+          <option *ngFor="let cliente of clientes" value="{{cliente.id_cliente}}">
+            {{cliente.nombre}}
+          </option>
+        </select>
+      </div>
+
+      <!--
       <div class="col-md-4 divIn">
-        <label class="form-label sub" for="entregado">Entregado</label>
-        <input
-          type="radio"
-          class="form-control"
-          name="entregado"
-          formControlName="entregado"
-        />
+        <fieldset>
+          <legend>Entregado</legend>
+          <label class="booleanBtn">
+            <input
+              class="form-control "
+              type="radio"
+              name="entregado"
+              value="true"
+              formControlName="entregado"
+            />Si
+          </label>
+          <label class="booleanBtn">
+            <input
+              class="form-control"
+              type="radio"
+              name="entregado"
+              value="false"
+              formControlName="entregado"
+            />No
+          </label>
+        </fieldset>
       </div>
       <div class="col-md-4 divIn100">
-        <label class="form-label sub" for="motivo">Reparado</label>
-        <input
-          type="radio"
-          class="form-control"
-          name="motivo"
-          formControlName="motivo"
-        />
+        <fieldset>
+          <legend>Reparado</legend>
+          <label class="booleanBtn">
+            <input
+              class="form-control"
+              type="radio"
+              name="reparado"
+              value="true"
+              formControlName="reparado"
+            />Si
+          </label>
+          <label class="booleanBtn">
+            <input
+              class="form-control"
+              type="radio"
+              name="reparado"
+              value="false"
+              formControlName="reparado"
+            />No
+          </label>
+        </fieldset>
       </div>
-  
+    -->
       <div class="col-12">
-        <button
-          type="submit"
-          class="btn btn-primary sub buttonAnadir"
-  
-          
-        >
-          Guardar
-        </button>
+        <button type="submit" class="btn btn-dark btnGuardar">Guardar</button>
       </div>
     </form>
   </div>

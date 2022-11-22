@@ -1,0 +1,46 @@
+<div class="divContainer">
+    <app-navbar></app-navbar>
+    <div class="container card">
+      <label class="form-label"> {{ titulo }} </label>
+      <form class="row g-3" [formGroup]="clienteForm" (ngSubmit)="saveOrUpdate()">
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="marca">Nombre(s)</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre"
+            name="nombre"
+            required
+            formControlName="nombre"
+          />
+        </div>
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="marca">Apellido(s)</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Apellido"
+            name="apellido"
+            required
+            formControlName="apellido"
+          />
+        </div>
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="marca">Teléfono</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Teléfono"
+            name="telefono"
+            required
+            formControlName="telefono"
+          />
+        </div>
+        <div class="col-12 " >
+          <button type="submit" class="btn btn-dark btnGuardar" >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

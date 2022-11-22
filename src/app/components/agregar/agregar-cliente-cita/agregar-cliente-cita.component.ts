@@ -1,36 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClienteService } from 'src/app/services/cliente.service';
-
-interface Empleado {
-  id_empleado: number
-}
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-agregar-cliente',
-  templateUrl: './agregar-cliente.component.html',
-  styleUrls: ['./agregar-cliente.component.css']
+  selector: 'app-agregar-cliente-cita',
+  templateUrl: './agregar-cliente-cita.component.html',
+  styleUrls: ['./agregar-cliente-cita.component.css']
 })
-export class AgregarClienteComponent implements OnInit {
+export class AgregarClienteCitaComponent implements OnInit {
 
   clienteForm: FormGroup;
   id_cliente: any | null;
   titulo = 'Registrar cliente';
 
-  empleado: Empleado = {
-    id_empleado: 1
-  }
-
   constructor(public fb: FormBuilder,
-    public clienteService: ClienteService,
+    public userService: UserService,
     private router: Router,
     private aRouter: ActivatedRoute) {
     this.clienteForm = this.fb.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      telefono: ['', Validators.required],
-      empleado:[this.empleado]
+      telefono: ['', Validators.required]
     })
 
     this.id_cliente = this.aRouter.snapshot.paramMap.get('id_cliente'); //AYUDA A RECUPERAR EL Id(Guarda las rutas)
@@ -38,22 +29,23 @@ export class AgregarClienteComponent implements OnInit {
   }
 
     ngOnInit(): void {
-      
+    this.isUpdate();
     }
 
-    /*saveOrUpdate(): void{
+    saveOrUpdate(): void{
+      console.log(this.id_cliente);
       if(this.id_cliente === null){
         this.save();
       }
       else {
         this.update(this.id_cliente)
       }
-    }*/
+    }
 
     save(): void {
-      console.log(this.clienteForm.value)
-      this.clienteService.createCliente(this.clienteForm.value).subscribe(response =>{ //funciones de flecha en Ts
-        this.router.navigate(['listar-clientes'])
+      this.userService.creteUser(this.clienteForm.value).subscribe(response =>{ //funciones de flecha en Ts
+        // this.userForm.reset();
+        this.router.navigate(['agregar-cita'])
       },
         error => {
           console.error(error)
@@ -61,7 +53,7 @@ export class AgregarClienteComponent implements OnInit {
       );
     }
 
-    /*isUpdate() {
+    isUpdate() {
       if(this.id_cliente !== null) {
         this.titulo = 'Editar usuario';
         this.userService.getUser(this.id_cliente).subscribe(response => {
@@ -73,9 +65,9 @@ export class AgregarClienteComponent implements OnInit {
           });
         });
       }
-    }*/
+    }
 
-    /*update(id_cliente: any) {
+    update(id_cliente: any) {
       const user: any = {
         nombre: this.clienteForm.value.nombre,
         las_name: this.clienteForm.value.apellido,
@@ -89,6 +81,6 @@ export class AgregarClienteComponent implements OnInit {
           console.error(error)
         }
       );
-    }*/
+    }
 
-  }
+}

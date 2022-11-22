@@ -1,6 +1,22 @@
 .divContainer{
-    padding-top: 25%;
+    padding-top: 15%;
     width: 60%;
     margin: 0 auto;
-    
 }
+
+.btnGuardar{
+    float: right;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    height: 50px;
+    width: 100px;
+}
+
+.booleanBtn{
+    margin-left: 20px;
+}
+
+.divIn{
+    width: 30%;
+}
+

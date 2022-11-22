@@ -15,7 +15,7 @@ const APP_ROUTES : Routes = [
     {path : 'listar-citas', component : ListarCitasComponent},
     {path : 'listar-clientes', component : ListarClientesComponent},
     {path : 'agregar-cita', component : AgregarCitaComponent},
-    {path : 'agregar-cliennte', component : AgregarClienteComponent},
+    {path : 'agregar-cliente', component : AgregarClienteComponent},
     {path : 'citas-por-aprobar', component : CitasPorAgregarComponent},
     {path : '***', pathMatch : 'full', redirectTo: ''}
 ]
