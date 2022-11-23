@@ -52,7 +52,7 @@ export class AgregarClienteComponent implements OnInit {
 
     save(): void {
       console.log(this.clienteForm.value)
-      this.clienteService.createCliente(this.clienteForm.value).subscribe(response =>{ //funciones de flecha en Ts
+      this.clienteService.createCliente(this.clienteForm.value).subscribe(response =>{ 
         this.router.navigate(['listar-clientes'])
       },
         error => {

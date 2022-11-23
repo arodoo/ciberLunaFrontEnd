@@ -1,0 +1,40 @@
+<div class="divContainer">
+    <app-navbar></app-navbar>
+    <div class="container card">
+      <label class="form-label"> {{ titulo }} </label>
+      <form class="row g-3" [formGroup]="detalleEquipoForm" (ngSubmit)="save()">
+
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="detalle">Detalle</label>
+          <input
+            type="text"
+            autocomplete="off"
+            class="form-control"
+            placeholder="Detalle"
+            name="detalle"
+            required
+            formControlName="detalle_problema"
+          />
+        </div>
+
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="costo_reparacion">Costo</label>
+          <input
+            type="text"
+            autocomplete="off"
+            class="form-control"
+            placeholder="$$$"
+            name="costo_reparacion"
+            required
+            formControlName="costo_reparacion"
+          />
+        </div>
+
+        <div class="col-12 " >
+          <button type="submit" class="btn btn-dark btnGuardar">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -10,10 +10,13 @@ export class ListarCitasComponent implements OnInit {
 
   titulo = 'Equipos';
   equipos: any;
+  id_equipo: any;
+
   constructor(private equipoService: EquipoService) { }
 
   ngOnInit(): void {
     this.equipoService.getAllEquipos().subscribe(response =>{
+      console.log(response.id_equipo)
       this.equipos = response;
     },
     error =>{

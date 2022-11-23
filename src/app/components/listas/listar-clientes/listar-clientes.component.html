@@ -1,6 +1,6 @@
 <div>
   <app-navbar></app-navbar>
-  <div class="container divContainer divColumnaDoble registrosListados">
+  <div class="container divContainer">
     <div class="aTitulo">
       <a class="navbar-brand aTextTitulo">
         <img src="assets\img\clientes.png" width="105" height="75" />
@@ -8,7 +8,8 @@
       </a>
     </div>
 
-    <table class="table table-bordered">
+    <div>
+    <table class="table table-bordered ">
       <thead>
         <tr>
           <th scope="col">Nombre</th>
@@ -28,6 +29,8 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
     <button class="btn buttonAnadir" routerLink="/agregar-cliente">Nuevo</button>
   </div>
 </div>

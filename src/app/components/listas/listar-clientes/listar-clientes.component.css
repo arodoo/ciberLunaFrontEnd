@@ -11,8 +11,7 @@
     margin: 0 auto;
     float: left;
     padding-left: 10%;
-}
-
+    }
 
 
 .h2Ti{
@@ -48,4 +47,9 @@
 
 .aTextTitulo{
     font-size: 40px;
+}
+
+.list {
+    overflow-y: scroll;
+   
 }

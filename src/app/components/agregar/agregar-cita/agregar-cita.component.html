@@ -15,6 +15,7 @@
           formControlName="marca"
         />
       </div>
+
       <div class="col-md-4 divIn">
         <label class="form-label sub" for="modelo">Modelo</label>
         <input
@@ -27,6 +28,7 @@
           formControlName="modelo"
         />
       </div>
+
       <div class="col-md-4 divIn">
         <label class="form-label sub" for="modelo">Fecha recibido</label>
         <br />
@@ -37,15 +39,15 @@
           name="fecha_recibido"
           formControlName="fecha_recibido"
         />
-        <input type="checkbox" (click)="bloquear()" />
+        <input type="checkbox"  checked (click)="bloquear()" />
         <label class="form-label sub" for="fecha_recibido">Hoy</label>
       </div>
 
       <div class="col-md-4">
         <label class="form-label sub" for="modelo">Cliente</label>
         <select class="form-control" formControlName="cliente">
-          <option *ngFor="let cliente of clientes" value="{{cliente.id_cliente}}">
-            {{cliente.nombre}}
+          <option *ngFor="let cli of clientes" [ngValue]="cli">
+            {{cli.nombre}}
           </option>
         </select>
       </div>

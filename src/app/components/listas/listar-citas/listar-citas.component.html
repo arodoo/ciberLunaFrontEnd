@@ -28,7 +28,7 @@
           <td> {{ e.entregado }} </td>
           <td> {{ e.estado_reparacion }} </td>
           <td>
-            <i class="fa-solid fa-pen-to-square" [routerLink]="['/agregar-cita',e.id_equipo]"></i>
+            <button [routerLink]="['/agregar-detalle-equipo', e.id_equipo]">Añadir detalle</button>
           </td>
         </tr>
       </tbody>
