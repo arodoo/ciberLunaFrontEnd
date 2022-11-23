@@ -53,6 +53,8 @@ export class AgregarCitaComponent implements OnInit {
     this.equipoForm = this.fb.group({
       marca: ['', Validators.required],
       modelo: ['', Validators.required],
+      detalle_problema: ['', Validators.required],
+      costo_reparacion: ['', Validators.required],
       /*fecha_recibido: ['', Validators.required],*/
       cliente: new FormControl,
       empleado: [this.empleado]
@@ -80,7 +82,7 @@ export class AgregarCitaComponent implements OnInit {
   save(): void {
     //console.log(this.equipoForm.value);
     this.equipoService.createEquipo(this.equipoForm.value).subscribe(response => {
-
+      alert('Equipo registrado');
       this.router.navigate(['listar-citas'])
     },
       error => {

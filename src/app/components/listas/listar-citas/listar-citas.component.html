@@ -15,6 +15,7 @@
           <th scope="col">Marca</th>
           <th scope="col">Modelo</th>
           <th scope="col">fecha recibido</th>
+          <th scope="col">Descripción</th>
           <th scope="col">Entregado</th>
           <th scope="col">Reparado</th>
         </tr>
@@ -25,10 +26,11 @@
           <td> {{ e.marca }} </td>
           <td> {{ e.modelo }} </td>
           <td> {{ e.fecha_recibido }} </td>
+          <td> {{ e.detalle_problema }} </td>
           <td> {{ e.entregado }} </td>
           <td> {{ e.estado_reparacion }} </td>
           <td>
-            <button [routerLink]="['/agregar-detalle-equipo', e.id_equipo]">Añadir detalle</button>
+            
           </td>
         </tr>
       </tbody>

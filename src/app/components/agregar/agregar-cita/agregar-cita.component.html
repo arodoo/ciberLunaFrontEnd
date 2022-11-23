@@ -43,6 +43,19 @@
         <label class="form-label sub" for="fecha_recibido">Hoy</label>
       </div>
 
+      <div class="col-md-4 divIn">
+        <label class="form-label sub" for="costo">Costo</label>
+        <input
+          type="text"
+          autocomplete="off"
+          class="form-control"
+          placeholder="$0.0"
+          name="costo"
+          required
+          formControlName="costo_reparacion"
+        />
+      </div>
+
       <div class="col-md-4">
         <label class="form-label sub" for="modelo">Cliente</label>
         <select class="form-control" formControlName="cliente">
@@ -50,6 +63,19 @@
             {{cli.nombre}}
           </option>
         </select>
+      </div>
+
+      <div class="col-md-4 divInDetalle">
+        <label class="form-label sub" for="detalle">Detalle</label>
+        <input
+          type="text"
+          autocomplete="off"
+          class="form-control"
+          placeholder="Falla en centro de carga"
+          name="detalle"
+          required
+          formControlName="detalle_problema"
+        />
       </div>
 
       <!--
