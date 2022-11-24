@@ -15,6 +15,7 @@ interface Empleado {
 export class AgregarClienteComponent implements OnInit {
 
   clienteForm: FormGroup;
+  //clientes : any;
   id_cliente: any | null;
   titulo = 'Registrar cliente';
 
@@ -93,5 +94,14 @@ export class AgregarClienteComponent implements OnInit {
         }
       );
     }
+    /*delete(cliente: any) {
+      confirm('¿Eliminar cliente?');
+      this.clienteService.deleteCliente(cliente.id_cliente).subscribe(response => {
+        this.router.navigate(['listar-equipos'])
+        if(response.delete == true) {
+          this.clientes.pop(cliente);
+        }
+      });
+    }*/
 
   }

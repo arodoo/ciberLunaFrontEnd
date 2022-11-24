@@ -13,6 +13,7 @@ export class EditarCitaComponent implements OnInit {
   equipoForm: FormGroup;
 
   id_equipo: any | null;
+  equipos: any;
   titulo = "Detalles del equipo";
 
   constructor(public fb: FormBuilder,
@@ -72,5 +73,15 @@ export class EditarCitaComponent implements OnInit {
   saveOrUpdate(){
     this.update(this.id_equipo);
     
+  };
+
+  delete(equipo: any) {
+    confirm('¿Eliminar equipo?');
+    this.equipoService.deleteEquipo(equipo.id_equipo).subscribe(response => {
+      this.router.navigate(['listar-citas'])
+      if(response.delete == true) {
+        this.equipos.pop(equipo);
+      }
+    });
   }
 }

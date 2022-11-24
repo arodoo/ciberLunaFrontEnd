@@ -14,8 +14,8 @@
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Teléfono</th>
-          <th scope="col">Modelo</th>
           <th scope="col">Encargado</th>
+          <th scope="col"></th>
         </tr>
       </thead>
 
@@ -24,7 +24,7 @@
         <tr *ngFor="let c of clientes">
           <td>{{ c.nombre + " " + c.apellido }}</td>
           <td>{{ c.telefono }}</td>
-          <td>{{ c.encargado.nombre }}</td>
+          <td>{{ c.empleado.nombre }}</td>
           <td>
             <i class="fa-solid fa-pen-to-square iDetalles" [routerLink]="['/editar-cliente/', c.id_cliente]"> Detalles</i>
           </td>
