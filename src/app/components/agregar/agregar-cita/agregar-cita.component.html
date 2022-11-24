@@ -1,6 +1,11 @@
 <div class="divContainer">
   <app-navbar></app-navbar>
-  <div class="container card">
+
+  <a class="navbar-brand goBack">
+    <img src="assets\img\goBack.png" width="75" height="50" routerLink="/listar-citas"/>
+  </a>
+
+  <div class="container card ">
     <label class="form-label"> {{ titulo }} </label>
     <form class="row g-3" [formGroup]="equipoForm" (ngSubmit)="save()">
       <div class="col-md-4 divIn">
@@ -9,7 +14,7 @@
           type="text"
           autocomplete="off"
           class="form-control"
-          placeholder="Marca"
+          placeholder="marca"
           name="fecha"
           required
           formControlName="marca"
@@ -22,7 +27,7 @@
           type="text"
           autocomplete="off"
           class="form-control"
-          placeholder="Modelo"
+          placeholder="modelo"
           name="modelo"
           required
           formControlName="modelo"
@@ -37,7 +42,7 @@
           type="date"
           class="form-control"
           name="fecha_recibido"
-          formControlName="fecha_recibido"
+          
         />
         <input type="checkbox"  checked (click)="bloquear()" />
         <label class="form-label sub" for="fecha_recibido">Hoy</label>
@@ -57,10 +62,10 @@
       </div>
 
       <div class="col-md-4">
-        <label class="form-label sub" for="modelo">Cliente</label>
+        <label class="form-label sub" for="cliente">Cliente</label>
         <select class="form-control" formControlName="cliente">
           <option *ngFor="let cli of clientes" [ngValue]="cli">
-            {{cli.nombre}}
+            {{cli.nombre + " " + cli.apellido }}
           </option>
         </select>
       </div>
@@ -71,7 +76,7 @@
           type="text"
           autocomplete="off"
           class="form-control"
-          placeholder="Falla en centro de carga"
+          placeholder="descripción"
           name="detalle"
           required
           formControlName="detalle_problema"

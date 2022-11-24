@@ -53,3 +53,7 @@
     overflow-y: scroll;
    
 }
+
+.iDetalles{
+    cursor: pointer;
+}

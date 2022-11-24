@@ -1,8 +1,13 @@
 <div class="divContainer">
   <app-navbar></app-navbar>
+
+  <a class="navbar-brand goBack">
+    <img src="assets\img\goBack.png" width="75" height="50" routerLink="/listar-clientes"/>
+  </a>
+
   <div class="container card">
     <label class="form-label"> {{ titulo }} </label>
-    <form class="row g-3" [formGroup]="clienteForm" (ngSubmit)="save()">
+    <form class="row g-3" [formGroup]="clienteForm" (ngSubmit)="saveOrUpdate()">
       <div class="col-md-4 divIn">
         <label class="form-label sub" for="marca">Nombre(s)</label>
         <input
@@ -33,7 +38,7 @@
           type="text"
           autocomplete="off"
           class="form-control"
-          placeholder="Teléfono"
+          placeholder="ej: 2721956788"
           name="telefono"
           required
           formControlName="telefono"

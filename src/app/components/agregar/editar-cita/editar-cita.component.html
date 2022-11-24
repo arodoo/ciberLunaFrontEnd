@@ -1,0 +1,99 @@
+<div class="divContainer">
+    <app-navbar></app-navbar>
+
+    <a class="navbar-brand goBack">
+      <img src="assets\img\goBack.png" width="75" height="50" routerLink="/listar-citas"/>
+    </a>
+
+    <div class="container card">
+      <label class="form-label"> {{ titulo }} </label>
+      <form class="row g-3" [formGroup]="equipoForm" (ngSubmit)="saveOrUpdate()">
+
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="marca">Marca</label>
+          <input
+            type="text"
+            autocomplete="off"
+            class="form-control"
+            placeholder="Marca"
+            name="fecha"
+            required
+            formControlName="marca"
+          />
+        </div>
+  
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="modelo">Modelo</label>
+          <input
+            type="text"
+            autocomplete="off"
+            class="form-control"
+            placeholder="Modelo"
+            name="modelo"
+            required
+            formControlName="modelo"
+          />
+        </div>
+  
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="modelo">Fecha recibido</label>
+          <br />
+          <input
+            [readonly]=true
+            type="date"
+            class="form-control"
+            name="fecha_recibido"
+            formControlName="fecha_recibido"
+          />
+        </div>
+  
+        <div class="col-md-4 divIn">
+          <label class="form-label sub" for="costo">Costo</label>
+          <input
+            type="text"
+            autocomplete="off"
+            class="form-control"
+            placeholder="$0.0"
+            name="costo"
+            required
+            formControlName="costo_reparacion"
+          />
+        </div>
+
+        <!--
+          <div class="col-md-4">
+            <label class="form-label sub" for="reparado">Reparado</label>
+            <select class="form-control" formControlName="reparado">
+              <option [ngValue]='true'>Si</option>
+              <option [ngValue]='false'>No</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label sub" for="entregado">Entregado</label>
+            <select class="form-control" formControlName="entregado">
+              <option [ngValue]='true'>Si</option>
+              <option [ngValue]='false'>No</option>
+            </select>
+          </div>
+          -->
+
+          <div class="col-md-4 divInDetalle">
+            <label class="form-label sub" for="detalle">Detalle</label>
+            <input
+              type="text"
+              autocomplete="off"
+              class="form-control"
+              placeholder="Falla en centro de carga"
+              name="detalle"
+              required
+              formControlName="detalle_problema"
+            />
+          </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-dark btnGuardar">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>

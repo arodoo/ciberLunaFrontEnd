@@ -38,21 +38,22 @@ export class AgregarClienteComponent implements OnInit {
   }
 
     ngOnInit(): void {
-      
+      this.isUpdate();
     }
 
-    /*saveOrUpdate(): void{
+    saveOrUpdate(): void{
       if(this.id_cliente === null){
         this.save();
       }
       else {
         this.update(this.id_cliente)
       }
-    }*/
+    }
 
     save(): void {
       console.log(this.clienteForm.value)
       this.clienteService.createCliente(this.clienteForm.value).subscribe(response =>{ 
+        alert('Cliente registrado');
         this.router.navigate(['listar-clientes'])
       },
         error => {
@@ -61,34 +62,36 @@ export class AgregarClienteComponent implements OnInit {
       );
     }
 
-    /*isUpdate() {
+    isUpdate() {
       if(this.id_cliente !== null) {
         this.titulo = 'Editar usuario';
-        this.userService.getUser(this.id_cliente).subscribe(response => {
+        this.clienteService.getCliente(this.id_cliente).subscribe(response => {
           // console.log(response.name);
           this.clienteForm.setValue({
             nombre: response.nombre,
             apellido: response.apellido,
-            telefono: response.telefono
+            telefono: response.telefono,
+            empleado: response.empleado
           });
         });
       }
-    }*/
+    }
 
-    /*update(id_cliente: any) {
+    update(id_cliente: any) {
       const user: any = {
         nombre: this.clienteForm.value.nombre,
-        las_name: this.clienteForm.value.apellido,
-        email: this.clienteForm.value.telefono
+        apellido: this.clienteForm.value.apellido,
+        telefono: this.clienteForm.value.telefono
       };
   
-      this.userService.updateUser(id_cliente, user).subscribe(response => {
+      this.clienteService.updateCliente(id_cliente, user).subscribe(response => {
+        alert('Cliente actualizado');
         this.router.navigate(['listar-clientes']);
       },
         error => {
           console.error(error)
         }
       );
-    }*/
+    }
 
   }

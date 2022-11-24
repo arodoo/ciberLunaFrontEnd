@@ -8,10 +8,6 @@ interface Empleado {
   id_empleado: number;
 }
 
-interface Cliente {
-  id_cliente: number;
-}
-
 
 
 @Component({

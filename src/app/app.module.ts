@@ -15,6 +15,7 @@ import { ListarClientesComponent } from './components/listas/listar-clientes/lis
 import { HttpClientModule } from '@angular/common/http';
 import { AgregarClienteCitaComponent } from './components/agregar/agregar-cliente-cita/agregar-cliente-cita.component';
 import { AgregarDetalleEquipoComponent } from './components/agregar/agregar-detalle-equipo/agregar-detalle-equipo.component';
+import { EditarCitaComponent } from './components/agregar/editar-cita/editar-cita.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AgregarDetalleEquipoComponent } from './components/agregar/agregar-deta
     ListarClientesComponent,
     AgregarClienteCitaComponent,
     AgregarDetalleEquipoComponent,
+    EditarCitaComponent,
   ],
   imports: [
     BrowserModule,

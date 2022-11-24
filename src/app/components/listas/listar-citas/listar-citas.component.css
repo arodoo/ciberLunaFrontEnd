@@ -13,8 +13,6 @@
     padding-left: 10%;
 }
 
-
-
 .h2Ti{
     margin-top: 2em;
     text-align:center;
@@ -48,5 +46,9 @@
 
 .aTextTitulo{
     font-size: 40px;
+}
+
+.iDetalles{
+    cursor: pointer;
 }
 
